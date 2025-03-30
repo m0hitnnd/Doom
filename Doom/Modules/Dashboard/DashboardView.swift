@@ -28,7 +28,7 @@ struct DashboardView: View {
             .navigationTitle("Dashboard")
         }
         .task {
-            await viewModel.viewWillAppear()
+            await viewModel.initialize()
         }
     }
 }

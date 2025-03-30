@@ -18,7 +18,7 @@ class DashboardViewModel: ObservableObject {
         self.screenTimeManager = screenTimeManager
     }
     
-    func viewWillAppear() async {
+    func initialize() async {
         await screenTimeManager.requestAuthorization()
         updateState()
     }
