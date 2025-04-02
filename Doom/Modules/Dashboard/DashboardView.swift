@@ -20,11 +20,18 @@ struct DashboardView: View {
                 case .unauthorized:
                     ScreenTimeAuthView()
                 case .authorized:
-                    Text("Dashboard")
-                        .font(.title)
-                        .foregroundColor(Colors.text)
+                    VStack(spacing: 16) {
+                        ScreenTimeReportView(selectedApps: [], selectedCategories: [], selectedWebDomains: [])
+                    }
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 12)
+                            .fill(Colors.background)
+                            .shadow(radius: 5)
+                    )
                 }
             }
+            .padding()
             .navigationTitle("Dashboard")
         }
         .task {
